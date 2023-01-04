@@ -1,4 +1,5 @@
 import * as actionTypes from '../actions/actionType'
+import axios from 'axios'
 
 const initialState = {
     items: [],
@@ -10,10 +11,19 @@ const initialState = {
 const items = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.ADD_ITEM:
+            
             const newitem = {
                 id: Date.now(),
                 value: state.title,
-            }
+            }   
+            
+            axios.post('http://localhost:3001/todos', { newitem })
+              .then(res => {
+                console.log(res);
+                console.log(res.data);
+              })
+
+
             return {
                 ...state,
                 items: state.items.concat(newitem),

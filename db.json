@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Learn React",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Learn Redux",
+      "completed": false
+    },
+    {
+      "newitem": {
+        "id": 1672819987887,
+        "value": "yared"
+      },
+      "id": 3
+    },
+    {
+      "newitem": {
+        "id": 1672820025829,
+        "value": "abera"
+      },
+      "id": 4
+    }
+  ]
+}
