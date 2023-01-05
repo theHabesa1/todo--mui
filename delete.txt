@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:3000/todos/${id}`)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
+  }
+
+  return (
+    <ul>
+      {todos.map(todo => (
+        <li key={todo.id}>
+          {todo.title}
+          <button onClick={() => handleDelete(todo.id)}>Delete</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default TodoList;
